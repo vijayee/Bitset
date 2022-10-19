@@ -1,0 +1,23 @@
+{
+  "packages": [
+    "Bitset"
+  ],
+  "deps": [
+    {
+      "locator": "github.com/vijayee/Buffer.git",
+      "version": "0.1.5"
+    },
+    {
+      "locator": "github.com/vijayee/Print.git",
+      "version": "0.0.1"
+    }
+  ],
+  "info": {
+    "description": "Bitset: Bit Array Library",
+    "homepage": "https://github.com/vijayee/Bitset",
+    "license": "GPLv3",
+    "documentation_url": "",
+    "version": "0.0.1",
+    "name": "Bitset"
+  }
+}
