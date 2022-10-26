@@ -1,5 +1,4 @@
 use "Buffer"
-use "Print"
 
 class Bitset
   let _bits: Buffer
