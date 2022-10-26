@@ -1,10 +1,10 @@
-build:
+prepare:
 	mkdir -p build
 	mkdir -p build/test
-test/build: build Bitset/test/*.pony
+build: prepare Bitset/test/*.pony
 	corral fetch
 	corral run -- ponyc Bitset/test -o build/test --debug
-test: test/build
+test: build
 	./build/test/test --sequential
 clean:
 	rm -rf build

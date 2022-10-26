@@ -134,11 +134,29 @@ class Bitset
   fun box op_not (): Bitset ref =>
     Bitset.fromBuffer(not _bits)
 
-  fun box values() : ArrayValues[U8, this->Array[U8 val]]^ =>
-    _bits.values()
+  fun box values() : BitsetValues[this->Bitset]^ =>
+    BitsetValues[this->Bitset](this)
 
   fun box size(): USize =>
     _bits.size()
 
   fun ref compact() =>
     _bits.compact()
+
+class BitsetValues[B: Bitset #read] is Iterator[Bool]
+  let _bits: B
+  var _i: USize
+
+  new create(bits: B) =>
+    _bits = bits
+    _i = 0
+
+  fun has_next(): Bool =>
+    _i < (_bits.size() * 8)
+
+  fun ref next(): Bool? =>
+    _bits(_i = _i + 1)?
+
+  fun ref rewind(): BitsetValues[B] =>
+    _i = 0
+    this

@@ -2,7 +2,7 @@
   "locks": [
     {
       "locator": "github.com/vijayee/Buffer.git",
-      "revision": "0.1.6"
+      "revision": "0.1.7"
     }
   ]
 }

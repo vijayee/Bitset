@@ -16,13 +16,15 @@ class iso _TestBitset is UnitTest
     let bs = Bitset()
     try
       bs(1)? = true
-      t.log(bs(1)?.string())
       t.assert_true(bs(1)?)
       bs(1)? = false
-      t.log(bs(1)?.string())
       t.assert_false(bs(1)?)
-      t.log(bs(1)?.string())
       t.assert_false(bs(1)? = true)
+      bs(1)? = false
+      for i in bs.values() do
+        t.log(i.string())
+        t.assert_false(i)
+      end
     else
       t.fail("failed to set second bit")
     end
