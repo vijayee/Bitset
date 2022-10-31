@@ -28,3 +28,25 @@ class iso _TestBitset is UnitTest
     else
       t.fail("failed to set second bit")
     end
+    try
+      let bs1 = Bitset(1)
+      let bs2 = Bitset(2)
+      bs1(0)? = true
+      bs1(1)? = false
+      bs1(2)? = false
+      bs1(3)? = true
+      bs1(4)? = false
+      bs2(0)? = true
+      bs2(1)? = false
+      bs2(2)? = false
+      bs2(3)? = true
+      bs2(4)? = false
+      t.log(bs1.string()?)
+      t.log(bs2.string()?)
+      let bs3: Bitset = bs1 xor bs2
+      t.log(bs3.string()?)
+      t.assert_true(bs1 == bs2)
+      t.assert_true(bs1 != bs3)
+    else
+      t.fail("failed compare")
+    end

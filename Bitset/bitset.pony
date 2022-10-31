@@ -1,5 +1,5 @@
 use "Buffer"
-
+use "collections"
 class Bitset
   let _bits: Buffer
 
@@ -142,6 +142,14 @@ class Bitset
 
   fun ref compact() =>
     _bits.compact()
+
+  fun string(): String^ ? =>
+    let size' = _bits.size()
+    let str: String iso = recover String(size') end
+    for i in Range(0, (size' * 8)) do
+      str.push(if apply(i)? then 49 else 48 end)
+    end
+    consume str
 
 class BitsetValues[B: Bitset #read] is Iterator[Bool]
   let _bits: B
