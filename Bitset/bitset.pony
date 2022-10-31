@@ -6,6 +6,10 @@ class Bitset
   new create(bytes: USize = 1) =>
     _bits = Buffer(bytes)
 
+  new init(bytes: USize = 1, value: U8 = 0) =>
+    _bits = Buffer.init(bytes, value)
+
+
   new fromBuffer(bits: Buffer) =>
     _bits = bits
 

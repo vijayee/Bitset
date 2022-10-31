@@ -5,7 +5,7 @@
   "deps": [
     {
       "locator": "github.com/vijayee/Buffer.git",
-      "version": "0.1.7"
+      "version": "0.1.8"
     }
   ],
   "info": {
@@ -13,7 +13,7 @@
     "homepage": "https://github.com/vijayee/Bitset",
     "license": "GPLv3",
     "documentation_url": "",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "name": "Bitset"
   }
 }
